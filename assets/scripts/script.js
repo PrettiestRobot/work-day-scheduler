@@ -47,6 +47,9 @@ $(document).ready(function () {
           } else if ($(this).data('hour') > currentHour) {
             $(this).removeClass('past present');
             $(this).addClass('future');
+          } else {
+            $(this).removeClass('past present');
+            $(this).addClass('future');
           }
         });
       }, 1000);
