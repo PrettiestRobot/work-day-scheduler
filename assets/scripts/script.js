@@ -13,6 +13,14 @@ $(document).ready(function () {
       localStorage.setItem(key,text);
     });
     
+    let hourRows = $('.time-block');
+    hourRows.each(function() {
+      let textKey = $(this).attr('id');
+      let textValue = localStorage.getItem(textKey)
+      console.log(textValue);
+      $(this).find(".description").val(textValue);
+    });
+
 
     // Update the date and check the time to apply css styles every second
       setInterval(function () {
@@ -23,7 +31,6 @@ $(document).ready(function () {
         // const currentHour = 12;
         var todaysDate = dayjs(currentDate).format("dddd, MMMM D");
         $('#currentDay').text(todaysDate);
-        let hourRows = $('.time-block');
         hourRows.each(function() {
           if ($(this).data('hour') === currentHour) {
             $(this).removeClass('past future');
