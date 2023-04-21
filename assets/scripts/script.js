@@ -1,7 +1,5 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
 
+// wait for document to load before executing code
 $(document).ready(function () {
 
 
@@ -13,6 +11,7 @@ $(document).ready(function () {
       localStorage.setItem(key,text);
     });
     
+    //Add task persistence so tasks do not clear on page refresh.
     let hourRows = $('.time-block');
     hourRows.each(function() {
       let textKey = $(this).attr('id');
