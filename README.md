@@ -4,6 +4,8 @@
 
 A simple work day planner limited to regular 9-5 bussiness hours.
 
+https://prettiestrobot.github.io/work-day-scheduler/
+
 ## Instructions
 
 - Click on a row and input a note or task in the input field. 
