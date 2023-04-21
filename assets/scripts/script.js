@@ -12,12 +12,15 @@ $(document).ready(function () {
       let text = $(this).siblings('.description').val();
       localStorage.setItem(key,text);
     });
+    
 
     // Update the date and check the time to apply css styles every second
-    function callTime() {
       setInterval(function () {
         const currentDate = new Date();
+        // **comment the following line out to check styles**
         const currentHour = currentDate.getHours();
+        // **uncomment the following line to check css styles**
+        // const currentHour = 12;
         var todaysDate = dayjs(currentDate).format("dddd, MMMM D");
         $('#currentDay').text(todaysDate);
         let hourRows = $('.time-block');
@@ -37,8 +40,6 @@ $(document).ready(function () {
           }
         });
       }, 1000);
-    }
-  
-    callTime();
+
   });
 });
